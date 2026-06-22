@@ -15,8 +15,9 @@ body {
 header {
     text-align: left;
     padding: 2.5rem 1.5rem;
-    background: #05417d;
+    background: linear-gradient(135deg, #05417d, #284a6c);
     color: rgb(253, 253, 253);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 header .header-content {
@@ -57,6 +58,13 @@ main {
     font-size: 0.95rem;
     background-color: #fff8e7;
     outline: none;
+    transition: background-color 0.60s, transform 0.60;
+}
+
+#cantidad-colores:hover, #formatoColor:hover,
+#cantidad-colores:active, #formatoColor:active {
+    background-color: rgb(175, 174, 174);
+    transform: translateY(-3px);
 }
 
 #btn-generar {
@@ -68,6 +76,16 @@ main {
     color: white;
     font-weight: bold;
     font-size: 0.95rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#btn-generar:hover {
+    background-color: #153b55;
+    transform: translateY(-3px);
+}
+
+#btn-generar:active {
+    transform: scale(0.97);
 }
 
 /* Grilla contenedora de colores */
@@ -82,10 +100,90 @@ main {
 .color-card {
     background-color: #d8ceb7;
     border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     padding: 1.5rem 1rem;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+
+.color-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.color-card.fijado {
+    border: 2px dashed #6c757d;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.paint-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 12px;
+    z-index: 10;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
+}
+
+.color-card:hover .paint-button {
+    opacity: 1;
+    transform: scale(1.1) rotate(15deg);
+}
+
+.paint-wrapper {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.paint-stain {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    transition: border-radius 0.4s ease, transform 0.4s ease, background-color 0.3s ease;
+    box-shadow: inset -4px -4px 12px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.droplet {
+    position: absolute;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.15);
+    transform: rotate(var(--rotacion-base)) scale(1);
+    transition: background-color 0.3s ease, border-radius 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.copy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #feefcb;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.copy-container:hover {
+    background-color: #e9ecef;
+}
+
+.copy-container:active {
+    transform: scale(0.96);
 }
 
 .color-text {
@@ -95,7 +193,52 @@ main {
     color: #495057;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+     margin: 0 !important;
+    padding: 0 !important;
 }
+
+.copy-button {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    color: #c9bc9e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.copy-container:hover .copy-button {
+    color: #212529;
+    transform: scale(1.1);
+}
+
+.copy-container.copied {
+    background-color: #d4edda;
+}
+
+.copy-container.copied .color-text,
+.copy-container.copied .copy-button {
+    color: #155724;
+}
+
+
+.animar-entrada {
+    animation: aparecer 1s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Diseños responsivos */
 @media (min-width: 992px) {
@@ -109,11 +252,29 @@ main {
     #contenedor-colores {
         gap: 0.6rem;
     }
+     .paint-stain {
+        width: 65px !important;
+        height: 65px !important;
+    }
+    .paint-wrapper {
+        height: 100px;
+    }
     .color-card {
         padding: 0.8rem 0.4rem;
         border-radius: 12px;
     }
     .color-text {
         font-size: 0.75rem;
+    }
+     .copy-container {
+        padding: 4px 8px;
+        gap: 4px;
+    }
+    .paint-button {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+    .color-card:hover {
+        transform: translateY(-4px) !important;
     }
 }
