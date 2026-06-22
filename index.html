@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>🎨 Colorfly</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎨 Colorfly</h1>
+        <p>Generador de paletas y manchas de pintura artísticas</p>
+    </header>
+
+    <main>
+
+        <section id="generador">
+            <h2>Estudio de Color</h2>
+
+            <div class="controls-container">
+                <label for="cantidad-colores">Cantidad:</label>
+                <select id="cantidad-colores">
+                    <option value="6">6 colores</option>
+                    <option value="8">8 colores</option>
+                    <option value="9">9 colores</option>
+                </select>
+
+                <label for="formatoColor">Formato:</label>
+                <select id="formatoColor">
+                    <option value="hex">HEX</option>
+                    <option value="rgb">RGB</option>
+                    <option value="hsl">HSL</option>
+                </select>
+
+                <button id="btn-generar">Generar paleta</button>
+            </div>
+
+            <div id="contenedor-colores"></div>
+        </section>
+
+    </main>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>
