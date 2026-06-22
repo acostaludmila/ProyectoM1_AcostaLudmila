@@ -1,0 +1,119 @@
+/* Configuración global y reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #dfdfdf;
+    color: #070707;
+}
+
+/* Layout y estructura principal */
+header {
+    text-align: left;
+    padding: 2.5rem 1.5rem;
+    background: #05417d;
+    color: rgb(253, 253, 253);
+}
+
+header .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+header p {
+    margin-top: 0.5rem;
+    color: #ebe9e9;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2.5rem auto;
+}
+
+#generador {
+    text-align: center;
+}
+
+/* Panel de controles y botones */
+.controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+#cantidad-colores, #formatoColor {
+    padding: 0.6rem 1rem;
+    border: 2px solid #dad7d0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #fff8e7;
+    outline: none;
+}
+
+#btn-generar {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #284a6c;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Grilla contenedora de colores */
+#contenedor-colores {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Tarjeta de color individual */
+.color-card {
+    background-color: #d8ceb7;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
+
+.color-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Diseños responsivos */
+@media (min-width: 992px) {
+    #contenedor-colores {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #contenedor-colores {
+        gap: 0.6rem;
+    }
+    .color-card {
+        padding: 0.8rem 0.4rem;
+        border-radius: 12px;
+    }
+    .color-text {
+        font-size: 0.75rem;
+    }
+}
