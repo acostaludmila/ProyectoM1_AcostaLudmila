@@ -58,7 +58,7 @@ main {
     font-size: 0.95rem;
     background-color: #fff8e7;
     outline: none;
-    transition: background-color 0.60s, transform 0.60;
+    transition: background-color 0.60s, transform 0.60s;
 }
 
 #cantidad-colores:hover, #formatoColor:hover,
