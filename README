@@ -37,15 +37,13 @@ Cada color se presenta como una figura orgánica única y puede visualizarse en 
 ## 🖼️ Capturas y demostraciones
 
 ### Vista principal
-
+<img src="./img/vista-principal.png" alt="Vista principal de Colorfly" width="700">
 
 ### Generación de paletas
-
-
+<img src="./img/gif-generar.gif" alt="Generación de paletas" width="700">
 
 ### Bloqueo de colores
-
-
+<img src="./img/gif-bloqueo.gif" alt="Bloqueo de colores" width="700">
 
 ## 🎯 Objetivo del proyecto
 
@@ -72,8 +70,22 @@ Este proyecto fue desarrollado para poner en práctica conceptos fundamentales d
 ## 🤖 Documentación del uso de IA
 
 Esta sección contiene evidencias del uso de herramientas de inteligencia artificial durante el proceso de desarrollo del proyecto.
+**Prompt 1:**
+<img src="./img/promp-1.png" alt="Prompt 1" width="700">
 
+**Respuesta:**
+<img src="./img/output-1A.png" alt="Resultado 1A" width="700">
+<img src="./img/output-1B.png" alt="Resultado 1B" width="700">
+<img src="./img/output-1C.png" alt="Resultado 1C" width="700">
 
+**Prompt 2:**
+<img src="./img/promp-2.png" alt="Prompt 2" width="700">
+
+**Respuesta:**
+<img src="./img/output-2A.png" alt="Resultado 2A" width="700">
+<img src="./img/output-2B.png" alt="Resultado 2B" width="700">
+<img src="./img/output-2C.png" alt="Resultado 2C" width="700">
+<img src="./img/output-2D.png" alt="Resultado 2D" width="700">
 ## 👩‍💻 Autor
 
 **Ludmila Estefania Acosta**
